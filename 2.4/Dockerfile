@@ -240,11 +240,11 @@ COPY httpd-foreground /usr/local/bin/
 #
 
 # Set servername
-RUN sed -i 's_#ServerName www.example.com:80_ServerName kcb-natshule.apps.test.aro.kcbgroup.com:443_g' /usr/local/apache2/conf/httpd.conf
+RUN sed -i 's_#ServerName www.example.com:80_ServerName kcb-natshule.apps.test.aro.kcbgroup.com:9443_g' /usr/local/apache2/conf/httpd.conf
 
 # Change port
-RUN sed -i 's_Listen 80_Listen 443_g' /usr/local/apache2/conf/httpd.conf
+RUN sed -i 's_Listen 80_Listen 9443_g' /usr/local/apache2/conf/httpd.conf
 
 # Change default port
-EXPOSE 80
+EXPOSE 9443
 CMD ["httpd-foreground"]
